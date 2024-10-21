@@ -8,7 +8,7 @@ Built into the GitHub UI is a web-based dev environment that is free to use. In 
 makes the perfect fallback environment for any student experiencing issues on their local
 workstation.
 
-## Advantages:
+### Advantages:
 
 - One-click environment
 - Templates: VS Code, Jupyter, etc.
@@ -16,14 +16,14 @@ workstation.
 - Web-based (no software required)
 - Customizable
 
-## Disadvantages:
+### Disadvantages:
 
 - Only 2 cores / 8 GB of memory
 - Appears to have no native R support
 - Good for development, NOT usable for larger workloads
 - Requires students to be familiar with "remote" local development
 
-## Try It
+### Try It
 
 From the main page of any GitHub repository, find the **CODE** drop-down button. In the top
 of the tab that appears, there is a Codespaces pane. Click into that and select "Create codespace".
@@ -31,7 +31,7 @@ of the tab that appears, there is a Codespaces pane. Click into that and select 
 Your codespace will open in a new browser tab, and will hibernate when you close the tab. They are
 automatically deleted after 30 days of non-use.
 
-To see or manage your codespaces, visit **`https://github.com/codespaces/`**
+To see or manage your codespaces, visit [**`https://github.com/codespaces/`**](https://github.com/codespaces/)
 
 ## 2. VS Code Devcontainers
 
@@ -43,7 +43,16 @@ Devcontainers provide a method for consistent, and truly local, terminals by con
 interactive terminal. This means all students have the same software, the same environment configuration,
 and the same paths to their work.
 
-Advantages:
+### Advantages:
 
-- Truly local environment, entirely on the student machine
-- Completely customizable
+- Truly local environment, runs 100% on the student machine
+- Completely customizable. Can even use custom Dockerfile.
+- Allows for port mappings, volume mappings, between computer and container
+
+### Disadvantages:
+
+- Requires an understanding of the `devcontainers.json` file
+- Built-in GitHub authentication is not automatic in all scenarios
+- Available container images are specifically built for this use
+- Access to other local files (`.ssh` directory, etc.) must be mapped in
+
