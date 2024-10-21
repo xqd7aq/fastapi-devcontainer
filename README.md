@@ -2,13 +2,16 @@
 
 Strategies for consistent student learning environments.
 
-## 1. GitHub Codespaces
+## 1. GitHub Codespaces :octocat:
 
 Built into the GitHub UI is a web-based dev environment that is free to use. In some ways this
 makes the perfect fallback environment for any student experiencing issues on their local
 workstation.
 
-### Advantages:
+> [**Codespaces**](https://github.com/features/codespaces) - fuly configured, secure cloud development
+environments native to GitHub. **GitHub Education** faculty can get double the resources for free.
+
+### Advantages :thumbsup:
 
 - One-click environment
 - Templates: VS Code, Jupyter, etc.
@@ -16,7 +19,7 @@ workstation.
 - Web-based (no software required)
 - Customizable
 
-### Disadvantages:
+### Disadvantages :thumbsdown:
 
 - Only 2 cores / 8 GB of memory
 - Appears to have no native R support
@@ -43,13 +46,13 @@ Devcontainers provide a method for consistent, and truly local, terminals by con
 interactive terminal. This means all students have the same software, the same environment configuration,
 and the same paths to their work.
 
-### Advantages:
+### Advantages :thumbsup:
 
 - Truly local environment, runs 100% on the student machine
 - Completely customizable. Can even use custom Dockerfile.
 - Allows for port mappings, volume mappings, between computer and container
 
-### Disadvantages:
+### Disadvantages :thumbsdown:
 
 - Requires an understanding of the `devcontainers.json` file
 - Built-in GitHub authentication is not automatic in all scenarios
