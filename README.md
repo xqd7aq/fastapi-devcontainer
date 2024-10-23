@@ -10,7 +10,7 @@ Goals:
 - Easy setup
 - Integration with GitHub
 
-## 0. UVA SDS VSCode Extension Pack
+## 0. SDS VSCode Extension Pack
 
 From within VS Code, search the Extensions for "UVA SDS" and you will find an extension pack that currently loads 29 additional plugins. These are currently curated for the first year of the BSDS curriculum.
 
