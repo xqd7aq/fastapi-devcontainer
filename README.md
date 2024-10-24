@@ -1,28 +1,12 @@
-# Learning Environments
-
-Strategies for consistent SDS learning environments.
-
-Goals:
-
-- Identical environments for everyone
-- Consistent software paths (`/usr/bin/`, `/bin/`, etc.)
-- Common methods for installing software (`apt`, `yum`, `pip` etc.)
-- Easy setup
-- Integration with GitHub
-
-## 0. SDS VSCode Extension Pack
-
-From within VS Code, search the Extensions for "UVA SDS" and you will find an extension pack that currently loads 29 additional plugins. These are currently curated for the first year of the BSDS curriculum.
-
-Additional extensions can be added, or more Extension Packs can be published.
-
-## 1. VSCode Devcontainers
+# VSCode Devcontainers
 
 The "terminal" of VS Code natively offers the user a command-line to her/his local environment, invoking `bash`, `zsh`, Windows PowerShell, Windows CMD, etc. This can be customized in a variety of ways, for example Windows users running WSL can use that terminal within VS Code, along with PowerShell or the Windows CMD.
 
+The challenge for data scientists is 
+
 Devcontainers provide a method for consistent local terminals by containerizing the interactive terminal. This means all students have the same software, the same environment configuration, and the same paths to their work.
 
-### Advantages :thumbsup:
+## Advantages :thumbsup:
 
 - Truly local environment, runs 100% on the student machine.
 - Configuration can also be used in GitHub Codespaces!
@@ -30,16 +14,14 @@ Devcontainers provide a method for consistent local terminals by containerizing 
 - Completely customizable. Can even use custom Dockerfile.
 - Allows for port mappings, volume mappings, between computer and container
 
-### Disadvantages :thumbsdown:
+## Disadvantages :thumbsdown:
 
 - Requires an understanding of the `devcontainers.json` file
 - Built-in GitHub authentication is not automatic in all scenarios
 - Available container images are specifically built for this use
 - Access to other local files (`.ssh` directory, etc.) must be mapped in
 
-### Try It
-
-Fork **https://github.com/UVADS/learning-environments** to explore a working Devcontainer environment.
+## Learn More
 
 Note the `.devcontainer/devcontainer.json` file, which configures the environment. This can include:
 
@@ -51,31 +33,26 @@ Note the `.devcontainer/devcontainer.json` file, which configures the environmen
 - Port forwarding, etc.
 - Other features available
 
-## 2. GitHub Codespaces :octocat:
+## Try It Out
 
-Built into the GitHub UI is a web-based dev environment that is free to use. In some ways this makes the perfect fallback environment for any student experiencing issues on their local workstation. Codespaces can be partially configured using the `devcontainer.json` file from above.
+1. Two prerequisites before you start:
 
-> [**Codespaces**](https://github.com/features/codespaces) - fully configured, secure cloud development environments native to GitHub. **GitHub Education** faculty can get double the resources for free.
+   - Be sure Docker is installed and running on your local machine.
+   - Be sure to install the [**UVA Data Science Core Extension Pack**](https://marketplace.visualstudio.com/items?itemName=uva-school-of-data-science.sds-vscode). This includes the Devcontainer plugin.
+   
+2. In order to use `git` inside of the Devcontainer, a little setup is needed.
+   
+   - Instead of creating a new `.gitconfig` file for the container, the Devcontainer will map your file into the container.
+   - Mark the container path as safe within your `~/.gitconfig` file by running this command:
 
-### Advantages :thumbsup:
+        ```
+        git config --global --add safe.directory '*'
+        ```
+    - We recommend using SSH key authentication to GitHub. Notice line 20 of the `.devcontainer/devcontainer.json` file maps the owner's SSH directory into the container.
+    - Line 21 of the configuration maps your `~/.gitconfig` file into the container as well.
 
-- One-click environment
-- Templates: VS Code, Jupyter, etc.
-- Built-in integration with GitHub
-- Web-based (no software required)
-- Customizable
+3. With that setup complete, fork and clone this repository to your local machine and open in VS Code.
 
-### Disadvantages :thumbsdown:
+4. You will be prompted in the lower-right corner of the screen that a Devcontainer configuration has been detected for this folder, asking if you would like to reopen it within the container. Click the **Reopen in Container** button to do so. 
 
-- Only 2 cores / 8 GB of memory. More for GitHub Education
-- Some community support for R but no native option
-- Good for development, NOT usable for larger workloads
-- Requires students to be familiar with "remote" local development
-
-### Try It
-
-From the main page of any GitHub repository, find the **CODE** drop-down button. In the top of the tab that appears, there is a Codespaces pane. Click into that and select "Create codespace".
-
-Your codespace will open in a new browser tab, and will hibernate when you close the tab. They are automatically deleted after 30 days of non-use.
-
-To see or manage your codespaces, visit [**`https://github.com/codespaces/`**](https://github.com/codespaces/)
+5. Once the project reopens in the container, your terminal will display the container environment, running as the `vscode` user, and your project will be in a new path (that does not exist on your local system). Software and paths will be consistent for all users.
