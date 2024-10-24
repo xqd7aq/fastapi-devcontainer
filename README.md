@@ -48,7 +48,7 @@ Note the `.devcontainer/devcontainer.json` file, which configures the environmen
         ```
         git config --global --add safe.directory '*'
         ```
-    - We recommend using SSH key authentication to GitHub. Notice line 20 of the `.devcontainer/devcontainer.json` file maps the owner's SSH directory into the container.
+    - We recommend using SSH key authentication to GitHub. (Go [here](SSH.md) for setup instructions.) Notice line 20 of the `.devcontainer/devcontainer.json` file maps the owner's SSH directory into the container.
     - Line 21 of the configuration maps your `~/.gitconfig` file into the container as well.
 
 3. With that setup complete, fork and clone this repository to your local machine and open in VS Code.
@@ -56,3 +56,10 @@ Note the `.devcontainer/devcontainer.json` file, which configures the environmen
 4. You will be prompted in the lower-right corner of the screen that a Devcontainer configuration has been detected for this folder, asking if you would like to reopen it within the container. Click the **Reopen in Container** button to do so. 
 
 5. Once the project reopens in the container, your terminal will display the container environment, running as the `vscode` user, and your project will be in a new path (that does not exist on your local system). Software and paths will be consistent for all users.
+
+6. This project contains a simple Python API framework called FastAPI. To run a preview of the application, run this command:
+
+    ```
+    ./preview.sh
+    ```
+   You will be prompted to open a browser to view and interact with the containerized API.
