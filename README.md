@@ -55,7 +55,7 @@ Note the `.devcontainer/devcontainer.json` file, which configures the environmen
 
 4. You will be prompted in the lower-right corner of the screen that a Devcontainer configuration has been detected for this folder, asking if you would like to reopen it within the container. Click the **Reopen in Container** button to do so. 
 
-5. Once the project reopens in the container, your terminal will display the container environment, running as the `vscode` user, and your project will be in a new path (that does not exist on your local system). Software and paths will be consistent for all users.
+5. Once the project reopens in the container, your terminal will display the container environment, running as the `vscode` user, and your project will be in a new path (that does not exist on your local system). Software and paths will be consistent for all users. Take a moment to query the path to Python3, or jq, etc.
 
 6. This project contains a simple Python API framework called FastAPI. To run a preview of the application, run this command:
 
