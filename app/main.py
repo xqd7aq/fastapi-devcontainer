@@ -6,12 +6,12 @@ from pydantic import BaseModel
 import json
 import os
 
-app = FastAPI()
+api = FastAPI()
 
-@app.get("/")  # zone apex
+@api.get("/")  # zone apex
 def zone_apex():
     return {"Hello": "Hello API"}
 
-@app.get("/add/{a}/{b}")
+@api.get("/add/{a}/{b}")
 def add(a: int, b: int):
     return {"sum": a + b}
